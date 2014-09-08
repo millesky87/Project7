@@ -1,0 +1,51 @@
+///question 1///
+var prices = items.map(function(total){
+return total.price;
+});
+total = prices.reduce(function(a,b){
+return a + b;
+})/prices.length
+console.log("the average price is $" + total.toFixed(2));
+
+///question 2///
+var list = items.filter(function(prices) {
+  return prices.price <=18.00 && prices.price >= 14.00;
+});
+list.map(function(prices2) {
+   return prices2.title;
+});
+ console.log("Items that cost betwen $14.00 and $18.00");
+list.forEach(function(prices3){
+console.log("title:" + prices3.title);
+});
+
+////question 3///
+var find = items.filter(function(three){
+  return three.currency_code ==="GBP";
+})
+var description = find.map(function(name){
+console.log(name.title + " costs $" + name.price);
+});
+
+///question 4///
+var madeof = items.filter(function(item) {
+ if (item.materials.indexOf("wood") >= 0) {
+ console.log(item.title + " is made of wood");
+}});
+
+///question 5///
+var eight = items.filter(function(item) {
+  return item.materials.length >= 8;
+}).forEach(function(item) {
+    console.log(item.title + " has " + item.materials.length + " materials:");
+   item.materials.forEach(function(mat) {
+   console.log(mat);
+  })
+  console.log("\n");
+})
+
+///question 6///
+ar maker = items.filter(function(item) {
+return item.who_made === "i_did";
+});
+console.log(maker.length + " were made by their seller")
